@@ -40,8 +40,30 @@ for (var i =0; index < Area.length; i++) {
         $(Area[i]).addClass("col-md-10 past description");
         
     }
+}
+
+//adding event listener to  text content
+$(".saveBtn").on(click,function () {
+    //get nearby value using siblings method 
+    var value = $(this).siblings(".description").val();
+    var time = $(this).parent().atrr("id");
+    //save it in local storage
+    localStorage.setItem(time,value);
+    
+});
+//for loopwill matc the array above and link them via k method and place them back 
+for (let i = 0; i < k.length; i++) {
+    //gets all the setitem to the local storage 
+    var cool=localStorage.getItem(k[i]);
+    console.log(localStorage.getItem(k[i]));
+
+    //if local storage is null then the loop will skip and print back in txt area
+    if(cool != null){
+        $(Area[i]).text(cool);
+    }
+}
+console.log(localStorage.length);
 
     
-}
 
 });
