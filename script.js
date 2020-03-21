@@ -1,3 +1,5 @@
+$.noConflict();
+
 $(document).ready (function () {
     //global array 
 var k =["Nine", "Ten","Eleven", "Twelve", "One","Two","Three","Four","Five"];
@@ -7,7 +9,7 @@ var Area =["#text9","#text10","#text11","#text12","#text1","#text2","#text3","#t
 setInterval(function () {
     $("aCurrentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'))
     
-}, 1000)
+}, 1000);
 
 //variables to help retrieve time in DOm
 var today = new Date();
